@@ -27,7 +27,7 @@ Table of Contents (dataproc cluster debian-9 with zookeeper, kafka ,BigQuery and
 
        `echo "source $SHARE_DATA/google-cloud-sdk/completion.bash.inc" >> /etc/profile.d/gcloud.sh`
 
-3. Clone this repository and cd into dataproc folder. `git clone https://github.com/dwaiba/dataproc-terraform && cd dataproc-terraform`
+3. Clone this repository and cd into dataproc folder. `git clone https://github.com/cloudgear-io/dataproc-terraform && cd dataproc-terraform`
 4. Please create Service Credential of type **JSON** via https://console.cloud.google.com/apis/credentials, download and save as google.json in credentials folder.
 
 ### Creation and destroying
@@ -76,13 +76,13 @@ Version | Includes | Base OS | Released On | Last Updated (sub-minor version) | 
  Also, one can use [Blast Radius](https://github.com/28mm/blast-radius) on live initialized terraform project to view graph.
  Please shoot in dockerized format:
 
- `docker ps -a|grep blast-radius|awk '{print $1}'|xargs docker kill && rm -rf dataproc-terraform && git clone https://github.com/dwaiba/dataproc-terraform && cd dataproc-terraform/ && terraform init && docker run --cap-add=SYS_ADMIN -dit --rm -p 5005:5000 -v $(pwd):/workdir:ro 28mm/blast-radius && cd ../../`
+ `docker ps -a|grep blast-radius|awk '{print $1}'|xargs docker kill && rm -rf dataproc-terraform && git clone https://github.com/cloudgear-io/dataproc-terraform && cd dataproc-terraform/ && terraform init && docker run --cap-add=SYS_ADMIN -dit --rm -p 5006:5000 -v $(pwd):/workdir:ro 28mm/blast-radius && cd ../../`
 
   A live example is [here](http://buildservers.westeurope.cloudapp.azure.com:5005/) for this project.
 
   ### Automatic Provisioning
 
-https://github.com/dwaiba/dataproc-terraform/
+https://github.com/cloudgear-io/dataproc-terraform/
 
 Pre-req: 
 1. gcloud should be installed. Silent install is - 
